@@ -1,0 +1,4 @@
+GAME_SIZE = 4
+MAX_SIMULATION_DEPTH = 30
+SIMULATIONS_PER_MOVE = 40
+MOVE_ID_DICT = { 0: "up", 1: "left", 2: "down", 3: "right"}
