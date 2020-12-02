@@ -84,7 +84,6 @@ class Board():
     
     def get_data(self):
         return self.__data
-            
     
     def print(self):
         data_converted = 2 ** self.__data.astype('uint')
