@@ -7,11 +7,11 @@ import random
 def get_optimal_move(board, max_simulation_depth=c.MAX_SIMULATION_DEPTH, simulations_per_move=c.SIMULATIONS_PER_MOVE):
     expected_score = np.zeros((4), dtype="int")
     for i in range(4):
-        expected_score[i] = get_expected_score(board, i, max_simulation_depth, simulations_per_move)
+        expected_score[i] = get_move_expected_score(board, i, max_simulation_depth, simulations_per_move)
     print(expected_score)
     return np.argmax(expected_score)
 
-def get_expected_score(board, move_id, max_simulation_depth, simulations_per_move):
+def get_move_expected_score(board, move_id, max_simulation_depth, simulations_per_move):
     expected_score = 0
     # first move
     first_move_board = bd.Board(board.get_data())

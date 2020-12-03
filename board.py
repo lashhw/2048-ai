@@ -68,8 +68,8 @@ class Board():
 
     def move_by_id(self, move_id):
         return { 0: self.move_up,
-                 1: self.move_left,
-                 2: self.move_down,
+                 1: self.move_down,
+                 2: self.move_left,
                  3: self.move_right }[move_id]()
 
     def is_dead(self):
