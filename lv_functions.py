@@ -58,8 +58,8 @@ def get_strong_optimal_move(data_tuple):
         for c in row:
             board |= int(c) << (4*i)
             i += 1
-    os.chdir(os.path.dirname(os.path.abspath(__file__)))
-    output = subprocess.Popen(["strong-ai\\bin\\2048.exe", str(board)], stdout=subprocess.PIPE).communicate()[0]
+    os.chdir(os.path.dirname(os.path.abspath(__file__)) + "/strong-ai/bin")
+    output = subprocess.Popen(["2048.exe", str(board)], stdout=subprocess.PIPE).communicate()[0]
     return (data_tuple[0], int(str(output)[-2:-1]), 0, 0, "")
 
 def get_move_expected_score(data_tuple):

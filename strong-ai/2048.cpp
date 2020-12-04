@@ -524,6 +524,23 @@ void play_game(get_move_func_t get_move) {
 }
 
 int main(int argc, char *argv[]) {
-    init_tables();
+    FILE* row_left_table_file = fopen("../data/row_left_table.bin", "rb");
+    FILE* row_right_table_file = fopen("../data/row_right_table.bin", "rb");
+    FILE* col_up_table_file = fopen("../data/col_up_table.bin", "rb");
+    FILE* col_down_table_file = fopen("../data/col_down_table.bin", "rb");
+    FILE* heur_score_table_file = fopen("../data/heur_score_table.bin", "rb");
+    FILE* score_table_file = fopen("../data/score_table.bin", "rb");
+    fread(row_left_table, sizeof(row_left_table), 1, row_left_table_file);
+    fread(row_right_table, sizeof(row_right_table), 1, row_right_table_file);
+    fread(col_up_table, sizeof(col_up_table), 1, col_up_table_file);
+    fread(col_down_table, sizeof(col_down_table), 1, col_down_table_file);
+    fread(heur_score_table, sizeof(heur_score_table), 1, heur_score_table_file);
+    fread(score_table, sizeof(score_table), 1, score_table_file);
+    fclose(row_left_table_file);
+    fclose(row_right_table_file);
+    fclose(col_up_table_file);
+    fclose(col_down_table_file);
+    fclose(heur_score_table_file);
+    fclose(score_table_file);
     printf("%d", find_best_move(strtoull(argv[1], NULL, 10)));
 }
