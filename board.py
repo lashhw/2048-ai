@@ -14,7 +14,7 @@ class Board():
         random_index = random.randint(0, possible_selections_count - 1)
         to_addr = possible_selections[0][random_index]
         to_addc = possible_selections[1][random_index]
-        self.__data[to_addr][to_addc] = 1 if random.random() <= 0.9 else 2
+        self.__data[to_addr][to_addc] = 1 if random.random() < 0.9 else 2
 
     def __stack_left(self):
         tmp_data = np.zeros((c.GAME_SIZE, c.GAME_SIZE), dtype="uint8")
