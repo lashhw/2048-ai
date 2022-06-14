@@ -1,5 +1,5 @@
 # 2048-ai
-NYCU 2021 Fall "LabVIEW Programming Language" Final Project
+NYCU 2020 Fall "LabVIEW Programming Language" Final Project
 
 # Topic
 Build a 2048 game on LabView and implement an AI player.
